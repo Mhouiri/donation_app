@@ -1,3 +1,4 @@
+import 'package:donating/Pages/Home/UrgentCases/DonatingPage/PayementPage/payement.dart';
 import 'package:donating/Style/style.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
@@ -10,6 +11,7 @@ class DonatingPage extends StatefulWidget {
 }
 
 class _DonatingPageState extends State<DonatingPage> {
+  int indice = 1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,13 +33,13 @@ class _DonatingPageState extends State<DonatingPage> {
                 child: Center(child: Text("")),
               ),
                Container(
-                 padding: EdgeInsets.only(right: 40, left: 40, top: 20),
+                 padding: EdgeInsets.only(right: 20, left: 20, top: 20),
                  decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(25),
                     color: bgColor),
                  width: MediaQuery.of(context).size.width,
                  height: MediaQuery.of(context).size.height * 0.66,
-                child: Center(child: Column(
+                child: Center(child: indice == 0 ? Payement() : Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                      Text("قضاء دين",
@@ -78,7 +80,11 @@ class _DonatingPageState extends State<DonatingPage> {
                       color: mainColor,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20.0),),
-                      onPressed: () {},
+                      onPressed: () {
+                        setState(() {
+                          indice = 0;
+                        });
+                      },
                       child: Text("تبرع",
                         style: TextStyle(
                         color: Colors.white,
@@ -86,7 +92,8 @@ class _DonatingPageState extends State<DonatingPage> {
                         fontFamily: 'Khebrat'),),
                     ),
                   ],
-                )),
+                )
+                ),
               )
             ],
           ),

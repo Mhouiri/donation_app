@@ -31,7 +31,6 @@ class _UrgentCasesState extends State<UrgentCases> {
                   elevation: 0,
                   color: Colors.transparent,
                   child: Container(
-
                     child: Center(child: Column(
                       children: [
                         Text(".اربك تكست هو اول موقع يسمح لزواره الكرام بتحويل الكتابة العربي الى كتابة مفهومة من قبل اغلب برامج التصميم مثل الفوتوشوب و الافترايفكتس و البريميرة",
