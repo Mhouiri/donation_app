@@ -124,13 +124,12 @@ class CaseInfos extends StatelessWidget {
                       fontFamily: 'Khebrat')),
                 ),
                 Container(
-                  child: Positioned(
-                    bottom: 20,
                     child: Text( title, style: TextStyle(
                       color: Colors.grey[500],
                       fontSize: 10,
                       fontFamily: 'Khebrat'
-                      )),
+                      // )
+                      ),
                   ),
                 ),
               ],
