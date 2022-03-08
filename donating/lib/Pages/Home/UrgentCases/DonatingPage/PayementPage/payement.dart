@@ -71,13 +71,27 @@ class SelectAmount extends StatelessWidget {
         ),
       height: 100,
       width: 100,
-      child: Center(child: Text("100 MAD",
-        style: TextStyle(
-          color: mainColor,
-          fontSize: 20,
-          fontFamily: 'Khebrat'
-          ),
-          ),
+      child: Center(child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text("درهم",
+            style: TextStyle(
+              color: mainColor,
+              fontSize: 10
+              ,
+              fontFamily: 'Khebrat'
+              ),
+              ),
+          Text(" 100",
+            style: TextStyle(
+              color: mainColor,
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              fontFamily: 'Khebrat'
+              ),
+              ),
+        ],
+      ),
       ),
     );
   }

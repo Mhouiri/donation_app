@@ -8,7 +8,7 @@ class MethodPayement extends StatefulWidget {
 }
 
 class _MethodPayementState extends State<MethodPayement> {
-    final List<Map> methods = [{'name': 'Paypal', 'image': 'assets/paypal.png', 'comment': "Max US5000"}, {'name': 'Visa', 'image': 'assets/mastercard.png', 'comment': "Credit/Debit"}, {'name': 'Bank Transfer', 'image': 'assets/bank.png', 'comment': "Find the RIB"}];
+    final List<Map> methods = [{'name': 'بايبال', 'image': 'assets/paypal.png', 'comment': "Max US5000"}, {'name': 'بطاقة الائتمان', 'image': 'assets/mastercard.png', 'comment': "Credit/Debit"}, {'name': 'تحويل بنكي', 'image': 'assets/bank.png', 'comment': "Find the RIB"}];
 
   @override
   Widget build(BuildContext context) {
@@ -32,14 +32,12 @@ class _MethodPayementState extends State<MethodPayement> {
                     child: Center(child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(methods[index]['image'], height: 40, width: 40),
-            SizedBox(width: 5,),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
                   child: Text(methods[index]['name'], style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 15,
                       fontFamily: 'Khebrat')),
                 ),
                 Container(
@@ -53,6 +51,7 @@ class _MethodPayementState extends State<MethodPayement> {
                 ),
               ],
             ),
+            Image.asset(methods[index]['image'], height: 40, width: 40),
           ],
         )),
                   ),
