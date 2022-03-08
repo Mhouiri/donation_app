@@ -1,4 +1,5 @@
-import 'package:donating/Pages/Home/UrgentCases/DonatingPage/PayementPage/methodPayement.dart';
+import 'package:donating/Pages/Home/UrgentCases/DonatingPage/PayementPage/PayementMethod/methodPayement.dart';
+import 'package:donating/Pages/Home/UrgentCases/DonatingPage/PayementPage/SelectAmount/selectAmount.dart';
 import 'package:donating/Style/style.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +11,6 @@ class Payement extends StatefulWidget {
 }
 
 class _PayementState extends State<Payement> {
-  final List<String> methodPayement = ['paypale', 'creditCard', 'transfer'];
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -22,16 +22,8 @@ class _PayementState extends State<Payement> {
             style: TextStyle(
               fontSize: 20,
               fontFamily: 'Khebrat'),),
-          SizedBox(height: 20,),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              SelectAmount(),
-              SelectAmount(),
-              SelectAmount(),
-            ],
-          ),
-          SizedBox(height: 20,),
+          SizedBox(height: 15,),
+          SelectAmount(),
           Text("طريقة الدفع",
             style: TextStyle(
               fontSize: 20,
@@ -57,42 +49,3 @@ class _PayementState extends State<Payement> {
   }
 }
 
-class SelectAmount extends StatelessWidget {
-  const SelectAmount({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        color: Colors.white
-        ),
-      height: 100,
-      width: 100,
-      child: Center(child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text("درهم",
-            style: TextStyle(
-              color: mainColor,
-              fontSize: 10
-              ,
-              fontFamily: 'Khebrat'
-              ),
-              ),
-          Text(" 100",
-            style: TextStyle(
-              color: mainColor,
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-              fontFamily: 'Khebrat'
-              ),
-              ),
-        ],
-      ),
-      ),
-    );
-  }
-}

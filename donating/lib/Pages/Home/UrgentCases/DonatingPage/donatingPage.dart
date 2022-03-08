@@ -3,6 +3,8 @@ import 'package:donating/Style/style.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
+int indice = 1;
+
 class DonatingPage extends StatefulWidget {
   const DonatingPage({key }) : super(key: key);
 
@@ -11,7 +13,6 @@ class DonatingPage extends StatefulWidget {
 }
 
 class _DonatingPageState extends State<DonatingPage> {
-  int indice = 1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,60 +40,78 @@ class _DonatingPageState extends State<DonatingPage> {
                     color: bgColor),
                  width: MediaQuery.of(context).size.width,
                  height: MediaQuery.of(context).size.height * 0.66,
-                child: Center(child: indice == 0 ? Payement() : Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                child: Column(
                   children: [
-                     Text("قضاء دين",
-                      style: TextStyle(
-                      fontSize: 24,
-                      fontFamily: 'Khebrat'
-                    ), textAlign: TextAlign.right,
-                    ),
-                    SizedBox(height: 15,),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                     GestureDetector(
+                           onTap: (){
+                             setState(() {
+                               if (indice == 0)
+                                indice = 1;
+                             });
+                           },
+                           child: Container(
+                             padding: EdgeInsets.only(right: MediaQuery.of(context).size.width / 1.4 ),
+                             width: MediaQuery.of(context).size.width,
+                            //  color: Colors.red,
+                             child: indice == 1 ? null :Image.asset('assets/arrow.png', height: 30, width: 30, color: mainColor,)),
+                         ),
+                    Center(child: indice == 0 ? Payement() : Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        CaseInfos(title: "المبلغ المطلوب", value: "12500 Dh", image: "assets/target.png",),
-                        CaseInfos(title: "المبلغ المجموع", value: "5000 Dh", image: "assets/clock.png",),
-                      ],
-                    ),
-                    SizedBox(height: 15,),
-                    LinearPercentIndicator(
-                      backgroundColor: Colors.black.withOpacity(0.2),
-                      animation: true,
-                      lineHeight: 7.0,
-                      animationDuration: 1400,
-                      percent: (10.20 * 100 / 22) / 100,
-                      progressColor: mainColor,
-                    ),
-                    SizedBox(height: 20,),
 
-                    Text(".اربك تكست هو اول موقع يسمح لزواره الكرام بتحويل الكتابة العربي الى كتابة مفهومة من قبل اغلب برامج التصميم مثل الفوتوشوب و الافترايفكتس و البريميرة.اربك تكست هو اول موقع يسمح لزواره الكرام بتحويل الكتابة العربي الى كتابة  .اربك تكست هو اول موقع يسمح لزواره الكرام بتحويل الكتابة العربي الى كتابة مفهومة من قبل اغلب برامج التصميم مثل الفوتوشوب و الافترايفكتس و البريميرة مفهومة من قبل اغلب برامج التصميم مثل الفوتوشوب و الافترايفكتس و البريميرة",
-                      style: TextStyle(
-                      fontSize: 12,
-                      fontFamily: 'Khebrat'
-                    ), textAlign: TextAlign.right,
-                    ),
-                    SizedBox(height: 20,),
-                    FlatButton(
-                      minWidth: MediaQuery.of(context).size.width,
-                      height: 35,
-                      color: mainColor,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20.0),),
-                      onPressed: () {
-                        setState(() {
-                          indice = 0;
-                        });
-                      },
-                      child: Text("تبرع",
-                        style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 14,
-                        fontFamily: 'Khebrat'),),
+                         Text("قضاء دين",
+                          style: TextStyle(
+                          fontSize: 24,
+                          fontFamily: 'Khebrat'
+                        ), textAlign: TextAlign.right,
+                        ),
+                        SizedBox(height: 15,),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            CaseInfos(title: "المبلغ المطلوب", value: "12500 Dh", image: "assets/target.png",),
+                            CaseInfos(title: "المبلغ المجموع", value: "5000 Dh", image: "assets/clock.png",),
+                          ],
+                        ),
+                        SizedBox(height: 15,),
+                        LinearPercentIndicator(
+                          backgroundColor: Colors.black.withOpacity(0.2),
+                          animation: true,
+                          lineHeight: 7.0,
+                          animationDuration: 1400,
+                          percent: (10.20 * 100 / 22) / 100,
+                          progressColor: mainColor,
+                        ),
+                        SizedBox(height: 20,),
+
+                        Text(".اربك تكست هو اول موقع يسمح لزواره الكرام بتحويل الكتابة العربي الى كتابة مفهومة من قبل اغلب برامج التصميم مثل الفوتوشوب و الافترايفكتس و البريميرة.اربك تكست هو اول موقع يسمح لزواره الكرام بتحويل الكتابة العربي الى كتابة  .اربك تكست هو اول موقع يسمح لزواره الكرام بتحويل الكتابة العربي الى كتابة مفهومة من قبل اغلب برامج التصميم مثل الفوتوشوب و الافترايفكتس و البريميرة مفهومة من قبل اغلب برامج التصميم مثل الفوتوشوب و الافترايفكتس و البريميرة",
+                          style: TextStyle(
+                          fontSize: 12,
+                          fontFamily: 'Khebrat'
+                        ), textAlign: TextAlign.right,
+                        ),
+                        SizedBox(height: 20,),
+                        FlatButton(
+                          minWidth: MediaQuery.of(context).size.width,
+                          height: 35,
+                          color: mainColor,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20.0),),
+                          onPressed: () {
+                            setState(() {
+                              indice = 0;
+                            });
+                          },
+                          child: Text("تبرع",
+                            style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 14,
+                            fontFamily: 'Khebrat'),),
+                        ),
+                      ],
+                    )
                     ),
                   ],
-                )
                 ),
               )
             ],

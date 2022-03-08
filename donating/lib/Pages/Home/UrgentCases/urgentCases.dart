@@ -26,7 +26,7 @@ class _UrgentCasesState extends State<UrgentCases> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   color: Colors.white),
-                width: MediaQuery.of(context).size.width * 0.38,
+                width: MediaQuery.of(context).size.width * 0.4,
                 child: Card(
                   elevation: 0,
                   color: Colors.transparent,
